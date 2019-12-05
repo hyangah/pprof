@@ -7,11 +7,8 @@ install:
  - cinst graphviz
 
 build_script:
- - go mod download
- - pwd
  - go env
- - cat go.mod
- - go build -x -v .
+ - go build github.com/google/pprof
 
 test_script:
   - go test -v ./...

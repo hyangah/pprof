@@ -7,6 +7,7 @@ build_script:
  - go mod download
  - pwd
  - go env
+ - cat go.mod
  - go build -x -v .
 
 test_script:

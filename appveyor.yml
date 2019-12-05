@@ -4,7 +4,8 @@ install:
  - cinst graphviz
 
 build_script:
- - go build github.com/google/pprof
+ - go mod download
+ - go build -x -v .
 
 test_script:
   - go test -v ./...

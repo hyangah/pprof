@@ -5,6 +5,8 @@ install:
 
 build_script:
  - go mod download
+ - pwd
+ - go env
  - go build -x -v .
 
 test_script:

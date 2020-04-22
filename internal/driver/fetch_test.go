@@ -572,7 +572,7 @@ func TestHTTPSInsecure(t *testing.T) {
 	defer os.Remove(outputTempFile.Name())
 	defer outputTempFile.Close()
 
-	address := "https+insecure://" + l.Addr().String() + "/debug/pprof/goroutine"
+	address := "https+insecure://" + l.Addr().String() + "/debug/pprof/mutex"
 	s := &source{
 		Sources:   []string{address},
 		Seconds:   10,
@@ -661,7 +661,7 @@ func TestHTTPSWithServerCertFetch(t *testing.T) {
 	if err != nil {
 		t.Fatalf("cannot get port from URL: %v", err)
 	}
-	address := "https://" + "localhost:" + portStr + "/debug/pprof/goroutine"
+	address := "https://" + "localhost:" + portStr + "/debug/pprof/mutex"
 	s := &source{
 		Sources:   []string{address},
 		Seconds:   10,
